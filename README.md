@@ -3,20 +3,20 @@
 A position paper on **wakeup loops** and **non-operative cycles** in LLM agent harnesses, plus a one-night controlled replication.
 
 **Author:** Michał Gołębiowski (Independent Researcher, Warsaw)
-**Drafted with:** Claude Opus 4.7 (Anthropic) — see Author's note in the paper
+**Drafted with:** Claude Opus 4.7 (Anthropic) - see Author's note in the paper
 **Date:** May 2026
 
 ## TL;DR
 
-Three implicit constraints in standard LLM agent harnesses — every cycle must produce, the model has no wall-clock structure between turns, context accumulates monotonically — compose a single design pattern that has not previously been named: *production-without-pause*. We propose lifting all three at once: **the wakeup loop**.
+Three implicit constraints in standard LLM agent harnesses - every cycle must produce, the model has no wall-clock structure between turns, context accumulates monotonically - compose a single design pattern that has not previously been named: *production-without-pause*. We propose lifting all three at once: **the wakeup loop**.
 
-In a controlled mini-replication on Claude Sonnet 4.6 (5 wakeup-variant agents + 5 control-variant agents on 6 documented-hard HumanEval bug-fix problems, 4 cycles), the wakeup variants exercised the legal `[NO_OP]` sentinel on **9 of 10 post-completion invocations (90%)**; the control variants — same task, same model, no `[NO_OP]` affordance — exercised it on **1 of 10 (10%, an out-of-grammar leak)**. Difference: **80 percentage points**, with operator co-shaping eliminated by construction.
+In a controlled mini-replication on Claude Sonnet 4.6 (5 wakeup-variant agents + 5 control-variant agents on 6 documented-hard HumanEval bug-fix problems, 4 cycles), the wakeup variants exercised the legal `[NO_OP]` sentinel on **9 of 10 post-completion invocations (90%)**; the control variants - same task, same model, no `[NO_OP]` affordance - exercised it on **1 of 10 (10%, an out-of-grammar leak)**. Difference: **80 percentage points**, with operator co-shaping eliminated by construction.
 
-The unexpected finding: the affordance is not exercised immediately upon being granted. There is a **~3-cycle lag** during which agents continue to produce verification output despite explicit permission to no-op. We name this *the trained-production gravity lag* — a measurable property of how strongly the always-production prior is retained even when explicitly overridden at the harness level.
+The unexpected finding: the affordance is not exercised immediately upon being granted. There is a **~3-cycle lag** during which agents continue to produce verification output despite explicit permission to no-op. We name this *the trained-production gravity lag* - a measurable property of how strongly the always-production prior is retained even when explicitly overridden at the harness level.
 
 ## Read
 
-- **Paper (PDF):** [`01-position-paper.pdf`](01-position-paper.pdf) — ~12k words, three figures, two appendices, one author's note.
+- **Paper (PDF):** [`01-position-paper.pdf`](01-position-paper.pdf) - ~12k words, three figures, two appendices, one author's note.
 - **Paper (markdown source):** [`01-position-paper.md`](01-position-paper.md).
 - **Replication report:** [`replication-night-1/REPORT.md`](replication-night-1/REPORT.md).
 - **Replication design (pre-registration):** [`replication-night-1/RESEARCH_DESIGN.md`](replication-night-1/RESEARCH_DESIGN.md).
