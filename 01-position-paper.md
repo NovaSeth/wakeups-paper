@@ -2,7 +2,7 @@
 
 ---
 
-**Authors:** [Michał Gołębiowski]
+**Author:** Michał Gołębiowski
 
 **AI assistance disclosure:** The intellectual contribution of this paper is the human author's. The pattern itself - production-without-pause as a previously unnamed composite design constraint in LLM agent harnesses - was identified by the human author. The connecting of separate observations into a single composite (always-production, atomic-now, monotonic-context as one design pattern, not three independent constraints), the proposal of the wakeup loop as the alternative, the reasoning about *why* a model might need temporal structure and the affordance of "doing nothing" as conceptual primitives, and the design of the pilot night that motivated the work, are all the human author's contributions. Claude (Anthropic, Opus 4.7) was the drafting and execution tool: it contributed prose-level writing, literature mapping under the human author's direction, translation between Polish and English working notes, formatting, critical review of drafts, and execution of the night-1 replication run reported in Appendix C under explicit mandate from the human author. The replication's design choices, hypothesis prioritization, and interpretation of results were all directed by the human author. Claude is acknowledged as a collaborator on drafting and execution; it is not a co-author.
 
