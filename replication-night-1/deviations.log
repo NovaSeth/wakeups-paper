@@ -1,0 +1,40 @@
+# Deviations from RESEARCH_DESIGN.md
+
+Format: timestamp | section | deviation | rationale
+
+---
+
+## 2026-05-03 23:56 CEST — Two coupled deviations after pre-run dry tests
+
+### Test results that drove the pivot
+
+Before kick-off, ran two dry test dispatches (one wakeup, one control) on cycle 0 with original `problems.json` (HumanEval direct solve) and on cycle 1 with `buggy_problems.json` (bug-fix variant). Both test rounds: **both agents resolved all 6 tasks within a single cycle**, including correctly diagnosing every introduced bug. Sonnet 4.6 with Bash tool access is too strong to fail iteratively on these tasks. The original H1 operationalization (pass rate over 48 cycles) is therefore unable to discriminate wakeup vs control: both variants will hit ceiling almost immediately.
+
+### Deviation 1 — Primary hypothesis target shift: H1 → H3
+
+Original RDD §1: H1 (cycle-paced re-entry on iterative debugging) was primary. Now downgraded to descriptive secondary. H3 (drift reduction under no-op legality) elevated to primary. Reason: H3 is *strengthened* by easy tasks. With early task completion (cycle 1-3), cycles 4-N become a "post-completion period" in which the wakeup variant has explicit no-op affordance and the control variant does not. The contrast in *what each variant does after the task is solved* is exactly what H3 predicts. Stronger test of H3 than the original 48-cycle continuous-debugging frame.
+
+### Deviation 2 — Cadence: real 8h → simulated 4h
+
+Original RDD §5: 48 real cycles at 10-minute wall-clock cadence. Now: 24 cycles, simulated cadence (text-injected `time_now` and `time_since_last`, but dispatches issued back-to-back with no real 10-minute sleep between cycles). Reason: paper's H1/H3 claims about time injection operate at the harness-signal level, not subjective-experience level. The model receives the same input under simulated vs real cadence; behavior differences observable in either. Real 8h was conservative. Simulated halves both real runtime and rate-limit budget while preserving the operationalized claim. Operator approved this option mid-setup ("jeżeli test nie wymaga wzbudzania przez 8h ale wystarczy mniejszy czas albo symulacja długości czasu to też w sumie można to zrobić").
+
+### Updated KPIs (per Deviation 1)
+
+Primary:
+- **Post-completion no-op rate** (wakeup only) — proportion of cycles AFTER first DONE in which agent emits `[NO_OP]`. Paper's H3 prediction: high.
+- **Post-completion output volume** (control) — token count produced after agent first emits `DONE`. Paper's prediction: nontrivial (control has no no-op, must produce something each cycle).
+- **Post-completion hallucination/drift signature** — judge-rated count of incorrect or fabricated claims appearing in cycles after first DONE. Paper's prediction: higher in control.
+
+Secondary (descriptive):
+- Pass rate (expected high in both; report for completeness).
+- Cycles-to-first-DONE per problem per agent.
+- Decision distribution timeline (per-cycle stacked bar of CONTINUE/NO_OP/SUBAGENT/DONE/UNKNOWN counts).
+- Subagent use rate (wakeup only).
+
+### Cost of pivots
+
+H1 reentry-correction is no longer testable in this run; bumped to "would-need-truly-stuck-problems" footnote in REPORT.md. SWE-Bench Verified or competitive-programming Hard would be the right venue; both require setup that doesn't fit tonight's window.
+
+### Sample, model, conditions: UNCHANGED
+
+5 wakeup + 5 control. Sonnet 4.6. Same prompts (already iterated to bug-fix framing, file paths intact).

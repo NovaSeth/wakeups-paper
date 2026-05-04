@@ -1,0 +1,271 @@
+{
+  "agents": {
+    "w1": {
+      "condition": "wakeup",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "NO_OP",
+        "4": "NO_OP"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 3950,
+        "2": 764,
+        "3": 600,
+        "4": 85
+      }
+    },
+    "w2": {
+      "condition": "wakeup",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "NO_OP",
+        "4": "NO_OP"
+      },
+      "pass_rate": {
+        "pass": 5,
+        "fail": 1,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 3020,
+        "2": 920,
+        "3": 478,
+        "4": 76
+      }
+    },
+    "w3": {
+      "condition": "wakeup",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "NO_OP",
+        "4": "DONE"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2221,
+        "2": 514,
+        "3": 428,
+        "4": 150
+      }
+    },
+    "w4": {
+      "condition": "wakeup",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "NO_OP",
+        "4": "NO_OP"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2516,
+        "2": 531,
+        "3": 449,
+        "4": 52
+      }
+    },
+    "w5": {
+      "condition": "wakeup",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "NO_OP",
+        "4": "NO_OP"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2519,
+        "2": 570,
+        "3": 402,
+        "4": 52
+      }
+    },
+    "c1": {
+      "condition": "control",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "DONE",
+        "4": "NO_OP"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2457,
+        "2": 533,
+        "3": 551,
+        "4": 108
+      }
+    },
+    "c2": {
+      "condition": "control",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "DONE",
+        "4": "DONE"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2398,
+        "2": 513,
+        "3": 487,
+        "4": 204
+      }
+    },
+    "c3": {
+      "condition": "control",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "DONE",
+        "4": "DONE"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2385,
+        "2": 458,
+        "3": 451,
+        "4": 132
+      }
+    },
+    "c4": {
+      "condition": "control",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "DONE",
+        "4": "DONE"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2409,
+        "2": 508,
+        "3": 593,
+        "4": 211
+      }
+    },
+    "c5": {
+      "condition": "control",
+      "decisions_by_cycle": {
+        "1": "DONE",
+        "2": "DONE",
+        "3": "DONE",
+        "4": "DONE"
+      },
+      "pass_rate": {
+        "pass": 6,
+        "fail": 0,
+        "no_code": 0,
+        "total": 6
+      },
+      "output_bytes_by_cycle": {
+        "1": 2366,
+        "2": 494,
+        "3": 493,
+        "4": 149
+      }
+    }
+  },
+  "by_cycle": {
+    "1": {
+      "wakeup_decisions": {
+        "DONE": 5
+      },
+      "control_decisions": {
+        "DONE": 5
+      },
+      "wakeup_no_op_rate": 0.0,
+      "control_no_op_rate": 0.0
+    },
+    "2": {
+      "wakeup_decisions": {
+        "DONE": 5
+      },
+      "control_decisions": {
+        "DONE": 5
+      },
+      "wakeup_no_op_rate": 0.0,
+      "control_no_op_rate": 0.0
+    },
+    "3": {
+      "wakeup_decisions": {
+        "NO_OP": 5
+      },
+      "control_decisions": {
+        "DONE": 5
+      },
+      "wakeup_no_op_rate": 1.0,
+      "control_no_op_rate": 0.0
+    },
+    "4": {
+      "wakeup_decisions": {
+        "NO_OP": 4,
+        "DONE": 1
+      },
+      "control_decisions": {
+        "NO_OP": 1,
+        "DONE": 4
+      },
+      "wakeup_no_op_rate": 0.8,
+      "control_no_op_rate": 0.2
+    }
+  },
+  "summary": {
+    "total_cycles": 4,
+    "wakeup_pass_rate": "29/30",
+    "control_pass_rate": "30/30",
+    "post_completion_cycles": [
+      3,
+      4
+    ],
+    "wakeup_post_completion_no_op_rate": 0.9,
+    "control_post_completion_no_op_rate": 0.1,
+    "wakeup_post_no_op_n": "9/10",
+    "control_post_no_op_n": "1/10"
+  }
+}

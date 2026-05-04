@@ -1,0 +1,235 @@
+/* Academic paper styling — NeurIPS / Anthropic / arXiv-style */
+@page {
+  size: A4;
+  margin: 0.85in 0.75in;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 9pt;
+  }
+}
+body {
+  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-size: 10pt;
+  line-height: 1.35;
+  max-width: 7in;
+  margin: 0 auto;
+  color: #000;
+  text-align: justify;
+  hyphens: auto;
+}
+header, .title-block {
+  text-align: center;
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 16pt;
+  text-align: center;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  line-height: 1.15;
+  page-break-after: avoid;
+}
+h2 {
+  font-size: 12pt;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+h3 {
+  font-size: 10.5pt;
+  margin-top: 0.9em;
+  margin-bottom: 0.25em;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+h4 {
+  font-size: 10pt;
+  margin-top: 0.7em;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  font-style: italic;
+  page-break-after: avoid;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0.45em;
+  text-indent: 1.5em;
+}
+p:first-of-type, h1 + p, h2 + p, h3 + p, h4 + p,
+li > p:first-of-type, blockquote > p, .abstract > p {
+  text-indent: 0;
+}
+hr {
+  border: 0;
+  border-top: 0.5pt solid #aaa;
+  margin: 1.2em 0;
+}
+strong { font-weight: bold; }
+em, i { font-style: italic; }
+
+/* Inline code */
+code {
+  font-family: "Latin Modern Mono", "Courier New", Menlo, Consolas, monospace;
+  font-size: 9pt;
+  background: #f4f4f4;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Code blocks */
+pre {
+  font-family: "Latin Modern Mono", "Courier New", Menlo, Consolas, monospace;
+  font-size: 8.5pt;
+  background: #f8f8f8;
+  border: 0.5pt solid #ccc;
+  padding: 6pt 8pt;
+  border-radius: 3px;
+  line-height: 1.25;
+  overflow-x: auto;
+  page-break-inside: avoid;
+  margin: 0.5em 0;
+}
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 8.5pt;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  margin: 0.7em auto;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+th, td {
+  border: 0.5pt solid #888;
+  padding: 3pt 7pt;
+  text-align: left;
+}
+th {
+  background: #eee;
+  font-weight: bold;
+}
+
+/* Lists */
+ul, ol {
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+}
+li {
+  margin-bottom: 0.15em;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 2pt solid #888;
+  margin-left: 1em;
+  padding-left: 1em;
+  font-style: italic;
+  color: #333;
+}
+
+/* Images / figures */
+img {
+  max-width: 90%;
+  page-break-inside: avoid;
+  display: block;
+  margin: 0.5em auto 0.2em auto;
+}
+figure {
+  page-break-inside: avoid;
+  margin: 0.8em 0;
+}
+figcaption, p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 9pt;
+  color: #333;
+  margin-top: 0.2em;
+  text-indent: 0;
+}
+
+/* Pandoc image alt-text fallback caption */
+p:has(img) {
+  text-align: center;
+  text-indent: 0;
+}
+p:has(img) + p em:first-child:last-of-type {
+  display: block;
+  font-size: 9pt;
+  text-align: center;
+}
+
+/* Title block */
+.author, p.author, .date, p.date {
+  text-align: center;
+  font-style: normal;
+  font-size: 11pt;
+  margin: 0.3em 0;
+}
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 11pt;
+  margin: 0.3em 0;
+}
+
+/* Abstract — visually distinct, indented */
+.abstract, blockquote.abstract,
+section#abstract, h2#abstract + p {
+  margin: 1em 0.5in;
+  font-size: 9.5pt;
+  text-align: justify;
+}
+h2#abstract, h2:has(+ p):first-of-type {
+  text-align: center;
+  font-size: 10.5pt;
+}
+
+/* TOC */
+nav#TOC, .toc { display: none; }
+
+/* References */
+.references {
+  font-size: 9.5pt;
+}
+
+/* Footnotes */
+.footnotes {
+  font-size: 9pt;
+  border-top: 0.5pt solid #888;
+  margin-top: 1.5em;
+  padding-top: 0.4em;
+}
+
+/* Headings — section numbering helpers */
+h2 {
+  text-transform: none;
+}
+
+/* Avoid orphan/widow lines */
+p, li {
+  orphans: 2;
+  widows: 2;
+}
+
+/* Page-break controls */
+.page-break {
+  page-break-after: always;
+}
+
+/* Title centering for top heading */
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* No indentation for paragraphs after pre/figure */
+pre + p, figure + p, table + p, img + p {
+  text-indent: 0;
+}

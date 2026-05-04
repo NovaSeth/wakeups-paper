@@ -1,0 +1,27 @@
+.arxiv-credentials.txt
+.DS_Store
+__pycache__/
+*.pyc
+
+# internal working drafts (not for public repo)
+_iteration_log.md
+decisions-for-michal.md
+PLAN.md
+SUMMARY_FOR_10AM.md
+RESUME_PLAN.md
+objections-and-responses.md
+abstract-variants.md
+titles-shortlist.md
+related-work-checklist.md
+verified-references.md
+pilot-quantitative-summary.md
+replication-protocol.md
+night-2/
+
+# rendered output (regeneratable)
+01-position-paper.html
+HumanEval.jsonl
+HumanEval.jsonl.gz
+
+# Zrzut ekranu (screenshots)
+Zrzut*.png
